@@ -1,3 +1,4 @@
+require('jest');
 const { getBreakdown, loadJsonFiles } = require('./db');
 
 describe('test suite for db', () => {
