@@ -18,7 +18,7 @@ const getBreakdown = (types) => {
   const breakdown = [];
   repositories.forEach((repository) => {
     repository.components.forEach((component) => {
-      const value = types.map(t => component[t]).join('-');
+      const value = types.map((t) => component[t]).join('-');
       const existed = breakdown.find((b) => b.key == value);
       if (!existed) {
         breakdown.push({
@@ -30,6 +30,7 @@ const getBreakdown = (types) => {
       }
     });
   });
+  breakdown.sort((x, y) => (y.percentage - x.percentage));
   return {
     breakDownType: type,
     breakdown,

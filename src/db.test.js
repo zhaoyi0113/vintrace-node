@@ -35,7 +35,6 @@ describe('test suite for db', () => {
 
   test('user should be able to query breakdown region', () => {
     const data = getBreakdown(['region']);
-    console.log(data);
     expect(data.breakDownType).toBe('region');
     expect(data.breakdown.find((b) => b.key == 'Mornington').percentage).toBe(
       60,
@@ -51,7 +50,6 @@ describe('test suite for db', () => {
 
   test('user should be able to query breakdown year and variety', () => {
     const data = getBreakdown(['year', 'variety']);
-    console.log(data);
     expect(data.breakDownType).toBe('year-variety');
     expect(data.breakdown.find((b) => b.key == '2011-Pinot Noir').percentage).toBe(
       5,
